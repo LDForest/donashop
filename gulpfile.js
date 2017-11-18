@@ -60,7 +60,7 @@ gulp.task('browser-sync', ['sass','bundle','svg-sprites'], () => {
 
   gulp.watch([`${paths.styles.sassPath}/**/*[^_].scss`, `${paths.styles.sassPath}/**/*[^_].css`], ['sass']);
   gulp.watch(`${paths.js.outputPath}/**/*.js`).on('change', browserSync.reload);
-  gulp.watch('./views/*.pug').on('change', browserSync.reload);
+  gulp.watch('./views/**/*.pug').on('change', browserSync.reload);
 
   chokidar.watch(`${paths.images.inputSvg}/*.svg`)
     .on('add', () => {gulp.run('svg-sprites');})

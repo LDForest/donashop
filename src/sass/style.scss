@@ -1,12 +1,20 @@
+@import 'helpers/normalize';
 @import 'helpers/variables';
 @import 'helpers/mixins';
-@import 'helpers';
+@import 'helpers/layouts';
 @import 'blocks';
 
-.blue {
-	color: blue;
-}
+// .search-div{
+// 	margin-top:20px;
+// }
 
-.product {
-	border: 1px solid #000;
-}
+// .search-img{
+// 	width: 20px;
+// 	height: 20px;
+// 	cursor: pointer;
+// 	float: left;
+// }
+
+// .field {
+// 	display: none;
+// }

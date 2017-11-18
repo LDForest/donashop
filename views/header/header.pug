@@ -1,0 +1,24 @@
+mixin menu-item(title, arr)
+	li.header__menu-item 
+		a.header__menu-link(href="#")=title
+		if arr && arr.length
+			ul.header__submenu
+				each val in arr
+					li.header__submenu-item
+						a.header__submenu-link(href="#")=val
+
+
+.header
+	.header__wrapper
+		.header__logo-menu
+			.header__logo
+				a(href="#")
+					img(src="./images/assets/BePro.png")
+			ul.header__menu
+				+menu-item('home', ['kek', 'lol'])
+				+menu-item('shop', ['kek', 'lol'])
+				+menu-item('portfolio', ['kek', 'lol'])
+				+menu-item('page', ['kek', 'lol'])
+				+menu-item('blog', ['kek', 'lol'])
+				+menu-item('elements', ['kek', 'lol'])
+				

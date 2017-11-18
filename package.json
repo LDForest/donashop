@@ -45,8 +45,12 @@
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.9.0"
   },
-  "browser": {},
-  "browserify-shim": {},
+  "browser": {
+    "jquery": "./src/js/deps/jquery.min.js"
+  },
+  "browserify-shim": {
+  	"jquery": "$"
+  },
   "browserify": {
     "transform": [
       "browserify-shim",
