@@ -1,41 +1,62 @@
 class Giver {
-  constructor(items = []) {
-    this.items = items;
+  constructor(data = {}) {
+    this.data = data;
   }
 
   /**
    * iNeed - Общая функция для получения айтемов
    *
-   * @param  {string} method Метод которым нужно получить данные
+   * @param  {string} field Которое поле требуется
+   * @param  {string|number} [method] Метод которым нужно получить данные
    * @param  {number} [amount=1] Какое количество
    * @param  {number} [from] С какого количества
    * @return {Array}
    */
-  iNeed(method, amount = 1, from = 0) {
-    if (method === 'random') {
-      return this.random(amount);
+  iNeed(field, method = 'stretch', amount = 1, from = 0) {
+    const arrayField = this.data[field];
+    let met = method;
+    let am = amount;
+
+    if (typeof met === 'number') {
+      am = met;
+      met = 'stretch';
     }
 
-    if (method === 'stretch') {
-      return this.stretch(from, amount);
+    if (met === 'random') {
+      const selectionArr = this.random(arrayField, am);
+      return this.markArray(selectionArr, field);
     }
 
-    if (method === 'stretchRecursive') {
-      return this.stretchRecursive(from, amount);
+    if (met === 'stretch') {
+      const selectionArr = this.stretch(arrayField, from, am);
+      return this.markArray(selectionArr, field);
     }
 
-    return this.items;
+    if (met === 'stretchRecursive') {
+      const selectionArr = this.stretchRecursive(arrayField, from, am);
+      return this.markArray(selectionArr, field);
+    }
+
+    return this.data[field];
+  }
+
+  markArray(arr, field){
+    return arr.map((item) => {
+      item.ctg = field;
+      return item;
+    });
   }
 
   /**
    * stretch - Отрезать массив "Напрямую"
    *
+   * @param  {Array} arr Исходный массив
    * @param  {number} from С какого элемента
    * @param  {number} amount Какое количество
    * @return {Array}
    */
-  stretch(from, amount) {
-    return this.items.slice(from, from + amount);
+  stretch(arr, from, amount) {
+    return arr.slice(from, from + amount);
   }
 
   /**
@@ -47,24 +68,24 @@ class Giver {
    * @param  {number} amount Какое количество требуется
    * @return {Array}
    */
-  stretchRecursive(from, amount) {
-    const itemsLength = this.items.length;
+  stretchRecursive(arr, from, amount) {
+    const itemsLength = arr.length;
     const haveFrom = itemsLength - from;
 
     if (haveFrom < amount) {
       let diffFrom = amount - haveFrom;
       let result = [];
-      result = result.concat(this.stretch(from, haveFrom));
+      result = result.concat(this.stretch(arr, from, haveFrom));
       diffFrom -= haveFrom;
       while (diffFrom > itemsLength) {
-        result = result.concat(this.stretch(0, itemsLength));
+        result = result.concat(this.stretch(arr, 0, itemsLength));
         diffFrom -= itemsLength;
       }
-      result = result.concat(this.stretch(0, diffFrom));
+      result = result.concat(this.stretch(arr, 0, diffFrom));
       return result;
     }
 
-    return this.items.slice(from, from + amount);
+    return arr.slice(from, from + amount);
   }
 
 
@@ -74,11 +95,11 @@ class Giver {
    * @param  {number} [amount=1] Нужное количество рандомных айтемов
    * @return {Array}
    */
-  random(amount = 1) {
+  random(arr, amount = 1) {
     let items = [];
     for (let i = 0; i < amount; i += 1) {
-      const randomNum = parseInt(Math.random() * this.items.length, 10);
-      items = items.concat(this.items[randomNum]);
+      const randomNum = parseInt(Math.random() * arr.length, 10);
+      items = items.concat(arr[randomNum]);
     }
     return items;
   }
