@@ -1,0 +1,1 @@
+var kekFunc = js => js += 1;
