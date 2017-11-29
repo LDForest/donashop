@@ -1,0 +1,12 @@
+mixin plus(caption,description,img)
+	.plus
+	.plus__text
+		.plus__caption=caption
+		.plus__description=description
+	.plus__img
+		svg.plus__svg
+			use(xlink:href=img)
+
+.pluses
+	+plus('caption', 'description', "#paper-plane")
+

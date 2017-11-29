@@ -35,6 +35,9 @@ mixin menu-item(title, arr)
 					svg.header__search
 						use(xlink:href="#magnifying-glass")
 		.search-click
+			img.search__logo(src="./images/assets/BeProBlack.png")
+			svg.search__icon
+				use(xlink:href="#magnifying-glass")
 			input.search-input(type="search" placeholder="Поиск по сайту..")
 			a.search-link(href="#")
 				svg.header__search-close

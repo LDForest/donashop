@@ -20,7 +20,8 @@ const svgSprite  =   require('gulp-svg-sprite');
 const svgmin =       require('gulp-svgmin');
 const imagemin =     require('gulp-imagemin');
 const chokidar =     require('chokidar');
-
+const cheerio =			 require('gulp-cheerio');
+const replace = 		 require('gulp-replace');
 const paths = {
   bundleFolder: './public',
   styles: {
@@ -91,7 +92,15 @@ gulp.task('svg-sprites', () => {
         symbol: true
       }
     }))
-    .pipe(gulp.dest('./views'));  
+    .pipe(cheerio({
+				run: function ($) {
+					$('[fill]').removeAttr('fill');
+					$('[style]').removeAttr('style');
+				},
+				parserOptions: { xmlMode: true }
+			}))
+     .pipe(replace('&gt;', '>'))
+    .pipe(gulp.dest('./views'));
 });
 
 //image optimizate
