@@ -33,8 +33,8 @@ const paths = {
     outputPath: './public/js'
   },
    images: {
-     inputSvg: './src/source_images/svg',
-     outputPath: './public/svg',
+     inputSvg: './src/svg',
+     outputPath: './views/includes/svg',
    }
 }
 
@@ -91,7 +91,7 @@ gulp.task('svg-sprites', () => {
         symbol: true
       }
     }))
-    .pipe(gulp.dest('./views/includes/svg'));  
+    .pipe(gulp.dest('./views'));  
 });
 
 //image optimizate

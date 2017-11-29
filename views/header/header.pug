@@ -7,10 +7,11 @@ mixin menu-item(title, arr)
 					li.header__submenu-item
 						a.header__submenu-link(href="#")=val
 
-
+//- p= data
 .header
 	.header__wrapper
-		.header__logo-menu
+		
+		.header__fixflex
 			.header__logo
 				a(href="#")
 					img(src="./images/assets/BePro.png")
@@ -21,4 +22,24 @@ mixin menu-item(title, arr)
 				+menu-item('page', ['kek', 'lol'])
 				+menu-item('blog', ['kek', 'lol'])
 				+menu-item('elements', ['kek', 'lol'])
-				
+			.header__fixblock
+				ul.header__menu-registry
+					li.header__user-menu-item
+						a.header__menu-link(href="#") log in
+					li.header__user-menu-item
+						a.header__menu-link(href="#") sign up
+				a.header__bag-link(href="#")
+					svg.header__bag
+						use(xlink:href="#hand-bag")
+				a.search-link(href="#")
+					svg.header__search
+						use(xlink:href="#magnifying-glass")
+		.search-click
+			input.search-input(type="search" placeholder="Поиск по сайту..")
+			a.search-link(href="#")
+				svg.header__search-close
+					use(xlink:href="#cancel")
+
+
+
+

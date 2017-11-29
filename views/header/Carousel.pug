@@ -1,0 +1,8 @@
+mixin slides(title, image)
+	.main-slider__item
+		img.main-slider__img(src= image)
+		h1.main-slider__caption=title
+	
+.main-slider.owl-carousel
+	each slide in indexSlider
+		+slides(slide.header, slide.image )

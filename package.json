@@ -41,15 +41,26 @@
     "gulp-svgmin": "^1.2.3",
     "gulp-uglify": "^2.0.1",
     "gulp-watch": "^4.3.11",
+    "postcss": "^6.0.14",
+    "postcss-cli": "^4.1.1",
+    "stylelint": "^8.3.1",
+    "stylelint-config-recommended": "^2.0.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.9.0"
   },
   "browser": {
-    "jquery": "./src/js/deps/jquery.min.js"
+    "jquery": "./src/js/deps/jquery.min.js",
+    "owl-carousel": "./src/js/deps/owl.carousel.min.js"
   },
   "browserify-shim": {
-  	"jquery": "$"
+    "jquery": "$",
+    "owl-carousel": {
+      "exports": "owlCarousel",
+      "depends": [
+        "jquery:jQuery"
+      ]
+    }
   },
   "browserify": {
     "transform": [

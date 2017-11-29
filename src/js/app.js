@@ -1,5 +1,19 @@
-// import $ from 'jquery';
+import $ from 'jquery';
+import 'owl-carousel';
 
-// $('.search-img').on('click', function() {
-// 	$('.field').toggle(400);
-// });
+$('.main-slider').owlCarousel({
+	 items: 1,
+   center: true,
+  //   mouseDrag: false,
+  //   autoplay: false,
+   animateOut: 'fadeOut',
+   nav: true,
+   loop: true,
+   navText: ['<svg class="prev"><use xlink:href="#right-arrow"></svg>', '<svg class="next"><use xlink:href="#right-arrow"></svg>']
+
+  //   smartSpeed: 700,
+})
+
+$('.search-link').on('click', () => {
+	$('.search-click').fadeToggle(400);
+})
