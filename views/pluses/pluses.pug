@@ -1,12 +1,16 @@
 mixin plus(caption,description,img)
 	.plus
-	.plus__text
-		.plus__caption=caption
-		.plus__description=description
-	.plus__img
-		svg.plus__svg
-			use(xlink:href=img)
+		.plus__text
+			.plus__caption=caption
+			.plus__description=description
+		.plus__img
+			svg.plus__svg
+				use(xlink:href=img)
 
-.pluses
-	+plus('caption', 'description', "#paper-plane")
 
+.pluses__wrapper
+	.pluses
+		+plus('Free Shipping', 'Oders over $99', "#paper-plane")
+		+plus('30 days return', 'If goods have problem',"#refresh")
+		+plus('Secure payment', '100% secure payment', "#credit-card")
+		+plus('24h Support', 'Dedicated Support', "#profile")

@@ -1,0 +1,55 @@
+.pluses {
+	display: flex;
+	justify-content: space-between;
+	border: 1px solid #999999;
+	border-radius: 5px;
+	z-index: 20;
+	background: #fff;
+	position:absolute;
+	transform: translateY(-50%);
+
+	&__wrapper {
+		@extend %wrapper;
+		position: relative;
+	}
+}
+
+.plus {
+	font-family: $montserrat;
+	padding: 60px;
+	position: relative;
+	&__caption {
+		font-size: 18px;
+		font-weight: 400;
+		color: #000;
+	}
+	&:after {
+		content: '';
+		position: absolute;
+		height: 80px;
+		width: 1px;
+		background: #999999;
+		top: calc(50% - 40px);
+		right: 0;
+	}
+	&:last-child:after {
+		display: none;
+	}
+	&__text {
+		float: right;
+	}
+	&__img {
+		float: left;
+		margin-right: 20px;
+	}
+	&__description {
+		font-size: 14px;
+		font-weight: 300;
+		color: #999999;
+	}
+	&__svg {
+		width: 38px;
+		height: 38px;
+		fill: #999999;
+	}
+}

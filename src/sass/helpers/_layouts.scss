@@ -1,8 +1,13 @@
 *{
    box-sizing: border-box;
 }
-%wrapper{
+%wrapperHeader{
 	max-width: 1170px;
+	width: 100%;
+	margin: 0 auto;
+}
+%wrapper{
+	max-width: 1282px;
 	width: 100%;
 	margin: 0 auto;
 }
