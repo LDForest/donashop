@@ -72,11 +72,11 @@ class Giver {
     const itemsLength = arr.length;
     const haveFrom = itemsLength - from;
 
+
     if (haveFrom < amount) {
       let diffFrom = amount - haveFrom;
       let result = [];
       result = result.concat(this.stretch(arr, from, haveFrom));
-      diffFrom -= haveFrom;
       while (diffFrom > itemsLength) {
         result = result.concat(this.stretch(arr, 0, itemsLength));
         diffFrom -= itemsLength;
