@@ -34,13 +34,13 @@ module.exports = [
   {
     name: 'Double layer top',
     price: 200,
-    image: '/images/products/Double-layer-top.jpg',
+    image: '/images/products/Double-layer-top.png',
   },
   {
     sale: true,
     name: 'Sequin-star-t-shirt',
     price: 100,
     oldPrice: 200,
-    image: '/images/Sequin-star-t-shirt.jpg',
+    image: '/images/products/Sequin-star-t-shirt.jpg',
   },
 ];
