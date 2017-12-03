@@ -1,13 +1,17 @@
 const express = require('express');
 
 const router = express.Router();
-const data = require('../data/patterns').IndexPage;
+const { IndexPage, ajaxProductsIndex } = require('../data/patterns');
 
-console.log(data);
+console.log(IndexPage);
 
 /* GET home page. */
 router.get('/', (req, res) => {
-  res.render('index', data);
+  res.render('index', IndexPage);
+});
+
+router.get('/index-products', (req, res) => {
+  res.json(ajaxProductsIndex);
 });
 
 module.exports = router;

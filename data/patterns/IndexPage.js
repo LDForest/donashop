@@ -1,15 +1,15 @@
 const data = require('../');
 
 const pattern = {
-  indexSlider: [].concat(data.iNeed('indexSlides', 'stretchRecursive', 4, 0)),
-  mainProducts: [].concat(
-    data.iNeed('products', 'stretch', 4, 0),
-    data.iNeed('newProducts', 'stretch', 1),
-    data.iNeed('products', 'stretchRecursive', 4, 5),
-  ),
-  eventSlider: [].concat(data.iNeed('indexEventsSlides', 'stretchRecursive', 4, 0)),
-  hotProducts: [].concat(data.iNeed('hotProducts', 'stretch', 2, 0)),
-  ad: [].concat(data.iNeed('indexAds', 1)),
+  indexSlider: [...data.iNeed('indexSlides', 'stretchRecursive', 5, 0)],
+  mainProducts: [
+    ...data.iNeed('products', 'stretch', 4, 0),
+    ...data.iNeed('newProducts', 'stretch', 1),
+    ...data.iNeed('products', 'stretchRecursive', 5, 5),
+  ],
+  eventSlider: [...data.iNeed('indexEventsSlides', 'stretchRecursive', 4, 0)],
+  hotProducts: [...data.iNeed('hotProducts', 'stretch', 2, 0)],
+  ad: [...data.iNeed('indexAds', 1)],
   populars: [
     data.iNeed('news', 'stretch', 3, 0),
     data.iNeed('news', 'stretch', 3, 0),
