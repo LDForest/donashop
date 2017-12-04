@@ -1,29 +1,5 @@
-mixin product(image, name, price, oldPrice, sale)
-	.product.products-row__item
-		a.more-products-href(href="#")
-			if sale 
-				.product__sale sale
-			.product__img-container
-				img.product__img(src=image)
-			.product__text
-				.product__name=name
-				.product__price-container
-					if oldPrice
-						.product__old= "$" + oldPrice + ".00 USD"
-					.product__price= "$" + price + ".00 USD"
-
-mixin newProducts(head, name, price, image)
-	.newProducts
-		.newProducts__container
-			.newProducts__new new
-			.newProducts__header=head
-			.newProducts__name= "New Now: " + name
-			button.newProducts__buttom
-				.newProducts__price= "$" + price + ".00 USD"
-				.newProducts__byNow by now
-		img.newProducts__img(src=image)
-
-
+include ../mixins/product
+include ../mixins/newProduct
 
 .products__wrapper
 	.products
@@ -51,8 +27,8 @@ mixin newProducts(head, name, price, image)
 			each product in mainProducts.slice(5, 9)
 				+product(product.image, product.name, product.price, product.oldPrice, product.sale)
 	.load-more.center
-		a.load-more__link(href="#")
+		a.load-more__link#load(href="#")
 			.load-more__img
-				svg.load-more__svg.loader_animate
+				svg.load-more__svg
 					use(xlink:href="#circle-of-two-clockwise-arrows-rotation")
 			.load-more__text load more

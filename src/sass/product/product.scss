@@ -191,7 +191,7 @@
 		margin-right: 15px;
 	}
 	&__svg{
-		height: 13px;
+		height: 15px;
 		width: 15px;
 		fill: #3853d8;
 	}
@@ -216,4 +216,9 @@
 
 .loader_animate{
 	animation: rotate 1.5s infinite linear;
+}
+
+.kek {
+	padding: 20px;
+	background: red;
 }

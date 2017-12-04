@@ -1,0 +1,10 @@
+mixin newProducts(head, name, price, image)
+	.newProducts
+		.newProducts__container
+			.newProducts__new new
+			.newProducts__header=head
+			.newProducts__name= "New Now: " + name
+			button.newProducts__buttom
+				.newProducts__price= "$" + price + ".00 USD"
+				.newProducts__byNow by now
+		img.newProducts__img(src=image)

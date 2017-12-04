@@ -1,0 +1,5 @@
+include ../mixins/product
+each row in data
+	.products-row
+		each product in row
+			+product(product.image, product.name, product.price, product.oldPrice, product.sale)

@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/index-products', (req, res) => {
-  res.json(ajaxProductsIndex);
+  setTimeout(() => res.json(ajaxProductsIndex), 1000);
 });
 
 module.exports = router;

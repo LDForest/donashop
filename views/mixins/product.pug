@@ -1,0 +1,13 @@
+mixin product(image, name, price, oldPrice, sale)
+	.product.products-row__item
+		a.more-products-href(href="#")
+			if sale 
+				.product__sale sale
+			.product__img-container
+				img.product__img(src=image)
+			.product__text
+				.product__name=name
+				.product__price-container
+					if oldPrice
+						.product__old= "$" + oldPrice + ".00 USD"
+					.product__price= "$" + price + ".00 USD"
