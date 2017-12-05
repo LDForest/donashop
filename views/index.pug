@@ -1,12 +1,21 @@
 extends layout
-
-//- block content
+block title
+	title=title
+block styles
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		link(href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600", rel="stylesheet")
+		link(href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,900", rel="stylesheet")
 block header
 	include header/index
 	include pluses/index
-block product
+block main
 	include product/index
-
+	include eventSlider/index
+	include hotProducts/index
+block footer
+	.footer
+block scripts
+	script(src="/js/bundle.js")
 
 	//- .search-div
 	//- 	img.search-img(src="/images/assets/magnifying-glass-browser.png")

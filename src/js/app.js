@@ -13,6 +13,16 @@ $('.main-slider').owlCarousel({
    navText: ['<svg class="prev"><use xlink:href="#right-arrow"></svg>', '<svg class="next"><use xlink:href="#right-arrow"></svg>']
 })
 
+$('.event').owlCarousel({
+	 items: 1 ,
+   center: true,
+   animateOut: 'fadeOut',
+   nav: true,
+   loop: true,
+   dots: true,
+   navText: ['<svg class="prev"><use xlink:href="#keyboard-arrow-button"></svg>', '<svg class="next"><use xlink:href="#keyboard-arrow-button"></svg>']
+})
+
 $('.search-link').on('click', () => {
 	$('.search-click').fadeToggle(400);
 })

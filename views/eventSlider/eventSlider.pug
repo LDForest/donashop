@@ -1,1 +1,5 @@
-eventSlider.scss
+include ../mixins/eventSlider
+
+.event.owl-carousel
+	each slider in eventSlider
+		+eventSlider(slider.description, slider.date, slider.type, slider.image )
