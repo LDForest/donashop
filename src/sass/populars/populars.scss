@@ -1,0 +1,134 @@
+.popular {
+	display: inline-block;
+	width: calc(100% - 330px);
+	float: right;
+	border: 1px solid #d5d5d6;
+	&__header {
+		min-height: 70px;
+		border-bottom: solid 1px #d5d5d6;
+		color: #000;
+		text-transform: uppercase;
+		font-family: $montserrat;
+		font-size: 14px;
+		font-weight: 700;
+		padding: 25px 80px;
+	}
+	&__right-block {
+		display: inline-block;
+		vertical-align: top;
+		margin-left: 30px;
+	}
+	&__item {
+		padding: 52px 50px;
+	}
+}
+
+.add {
+	max-width: 300px;
+	vertical-align: top;
+}
+
+.article_big .article__content {
+	position: absolute;
+	left: 20px;
+	bottom: 50px;
+	color: #fff;
+}
+
+.popular-carousel .owl-nav {
+	top: -32px;
+	width: auto;
+	right: 0;
+	left: auto;
+	fill: #000;
+}
+
+.article {
+	display: flex;
+	align-items: center;
+	&__date {
+		font-family: $montserrat;
+		font-size: 10px;
+		font-weight: 600;
+		margin-bottom: 14px;
+		display: inline-flex
+	}
+	&__title {
+		font-family: $playfair;
+		font-size: 18px;
+		font-weight: 500;
+		margin-bottom: 14px;
+	}
+	&__actions {
+		display: inline-flex;
+		font-family: $montserrat;
+		font-size: 10px;
+		font-weight: 600;
+	}
+	&__link {
+		text-transform: uppercase;
+		color: #000;
+		font-family: $montserrat;
+		font-weight: 600;
+		font-size: 14px;
+		letter-spacing: 2;
+		text-decoration: none;
+	}
+	&__icon {
+		width: 10px;
+		height: 10px;
+		margin-right: 5px;
+	}
+	&__actions-item{
+		margin-right: 5px;
+	}
+	&__viewAll {
+		display: inline-flex;
+	}
+	&__arrowsvg {
+		width: 13px;
+		height: 14px;
+		fill: #000;
+		margin-left: 15px;
+		margin-bottom: 2px;
+	}
+	&_big {
+		position: relative;
+		display: inline-block;
+	}
+	&_big & {
+		&__content {
+			position: absolute;
+			left: 50px;
+			bottom: 50px;
+			color: #fff;
+		}
+		&__date {
+			color: #fff;
+		}
+		&__icon {
+			fill: #fff;
+		}
+	}
+	&_sm {
+		margin-bottom: 50px;
+	}
+	&_sm & {
+		&__content {
+			max-width: 114px;
+			margin-left: 30px;
+			color: #999999;
+		}
+		&__title {
+			color: #000;
+		}
+		&__icon {
+			fill: #999999;
+		}
+	}
+}
+
+.popular-carousel .article .article__image {
+	width: auto;
+	display: inline-block;
+}

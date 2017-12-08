@@ -1,0 +1,8 @@
+mixin hotProduct(image, category, name, price)
+	.hotProduct
+		img.hotProduct(src=image)
+		a.hotProducts__link(href="#")
+			.hotProduct__container
+				.hotProduct__category=category
+				.hotProduct__name=name
+				.hotProduct__price= "$" + price + ".00USD"

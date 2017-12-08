@@ -1,10 +1,5 @@
-mixin hotProduct(image, category, name, price)
-	.hotProduct
-		img.hotProduct(src=image)
-		.hotProduct__category=category
-		.hotProduct__name=name
-		.hotProduct__price= "$" + price + ".00USD"
-
-.hotProducts
-	each product in hotProducts
-		+hotProduct(product.image, product.category, product.name, product.price)
+include ../mixins/hotProducts
+.wrapper
+		.hotProducts
+			each product in hotProducts
+				+hotProduct(product.image, product.category, product.name, product.price)

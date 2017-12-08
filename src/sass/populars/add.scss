@@ -1,0 +1,21 @@
+.add{
+	display: inline-block;
+	position: relative;
+	text-align: center;
+	&__container{
+		position: absolute;
+		left: 0;
+		bottom: 50px;
+		right: 0;
+	}
+	&__button{
+		border: none;
+		border-radius: 50px;
+		background: #3853d8;
+		color: #fff;
+		padding: 13px 30px;
+		font-family: $montserrat;
+		font-weight: 700;
+		font-size: 14px;
+	}
+}

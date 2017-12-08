@@ -103,16 +103,16 @@ gulp.task('svg-sprites', () => {
     .pipe(gulp.dest('./views'));
 });
 
-//image optimizate
-gulp.task('img-min', () =>
-    gulp.src(`${paths.images.inputPath}/*.{png,jpeg,jpg,gif}`)
-        .pipe(imagemin({
-          interlaced: true,
-          progressive: true,
-          optimizationLevel: 5
-        }))
-        .pipe(gulp.dest(`${paths.images.outputPath}`))
-);
+// //image optimizate
+// gulp.task('img-min', () =>
+//     gulp.src(`${paths.images.inputPath}/*.{png,jpeg,jpg,gif}`)
+//         .pipe(imagemin({
+//           interlaced: true,
+//           progressive: true,
+//           optimizationLevel: 5
+//         }))
+//         .pipe(gulp.dest(`${paths.images.outputPath}`))
+// );
 
 //function for js compile
 function jsCreateCompile(debug, production){

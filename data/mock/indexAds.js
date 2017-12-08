@@ -1,5 +1,5 @@
 module.exports = [
   {
-    image: '/images/ads/ad197.jpg',
-  },
+    image: '/images/promo/ad197.png'
+  }
 ];

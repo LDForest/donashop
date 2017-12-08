@@ -1,0 +1,32 @@
+mixin article(image, date, title, commentsCount, likesCount, isBig) 
+	.article(class=`${isBig ? 'article_big' : 'article_sm'}`)
+		img.article__image(src=image)
+		.article__content
+			.article__date
+				svg.article__icon
+					use(xlink:href="#clock-circular-outline")
+				.article__text= 'Date: ' + date
+			.article__title=title
+			.article__actions
+				svg.article__icon
+					use(xlink:href="#speech-bubbles-comment-option")
+				.article__actions-item=commentsCount
+				svg.article__icon
+					use(xlink:href="#favorite-heart-button")
+				.article__actions-item=likesCount
+
+.popular
+	.popular__header popular
+		.popular__nav.owl-nav
+	.popular__container.popular-carousel.owl-carousel
+		each item in populars
+			.popular__item
+				+article('/images/news/article1.png', item[0].date, item[0].header, item[0].comments, item[0].likes, true)
+				.popular__right-block
+					+article('/images/news/article2.png', item[1].date, item[1].header, item[1].comments, item[1].likes, false)
+					+article('/images/news/article3.png', item[2].date, item[2].header, item[2].comments, item[2].likes, false)
+					.article__viewAll.article
+						a.article__link(href="#") view all
+						.article__arrow 
+							svg.article__arrowsvg
+								use(xlink:href="#right-arrowDescription")

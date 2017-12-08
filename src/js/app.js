@@ -6,7 +6,6 @@ const productsWrapper = $('.products');
 
 $('.main-slider').owlCarousel({
 	 items: 1,
-   center: true,
    animateOut: 'fadeOut',
    nav: true,
    loop: true,
@@ -15,11 +14,18 @@ $('.main-slider').owlCarousel({
 
 $('.event').owlCarousel({
 	 items: 1 ,
-   center: true,
-   animateOut: 'fadeOut',
    nav: true,
    loop: true,
    dots: true,
+   navText: ['<svg class="prev"><use xlink:href="#keyboard-arrow-button"></svg>', '<svg class="next"><use xlink:href="#keyboard-arrow-button"></svg>']
+})
+
+$('.popular-carousel').owlCarousel({
+	 items: 1 ,
+   animateOut: 'fadeOut',
+   nav: true,
+   loop: true,
+   dots: false,
    navText: ['<svg class="prev"><use xlink:href="#keyboard-arrow-button"></svg>', '<svg class="next"><use xlink:href="#keyboard-arrow-button"></svg>']
 })
 
