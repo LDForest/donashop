@@ -4,6 +4,16 @@ const render = require('../../views/templates/products.pug');
 
 const productsWrapper = $('.products');
 
+const popularNavs = [
+` <svg class="prev populars-prev">
+   		<use xlink:href="#keyboard-arrow-button">
+   	</svg>
+</div>`,
+`	<svg class="next populars-next">
+    		<use xlink:href="#keyboard-arrow-button">
+    </svg>
+</div>`]
+
 $('.main-slider').owlCarousel({
 	 items: 1,
    animateOut: 'fadeOut',
@@ -26,13 +36,22 @@ $('.popular-carousel').owlCarousel({
    nav: true,
    loop: true,
    dots: false,
-   navText: ['<svg class="prev"><use xlink:href="#keyboard-arrow-button"></svg>', '<svg class="next"><use xlink:href="#keyboard-arrow-button"></svg>']
+   navText: popularNavs
+})
+
+$('.sliderLogo__container').owlCarousel({
+	 items: 4 ,
+   nav: true,
+   loop: true,
+   dots: false,
+   navText: ['<svg class="prev navLogo"><use xlink:href="#keyboard-arrow-button"></svg>',
+    '<svg class="next navLogo"><use xlink:href="#keyboard-arrow-button"></svg>']
 })
 
 $('.search-link').on('click', () => {
 	$('.search-click').fadeToggle(400);
 })
-
+-
 $('#load').on('click', function(e) {
 	e.preventDefault();
 	const svg = $(this).find('svg');

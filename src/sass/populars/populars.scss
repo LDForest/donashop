@@ -132,3 +132,15 @@
 	width: auto;
 	display: inline-block;
 }
+
+.owl-prev .populars-prevContainer{
+    transform: rotate(180deg);
+}
+// .populars-prev{
+// 	width: 10px;
+// 	height: 10px;
+// }
+// .populars-next{
+// 	width: 10px;
+// 	height: 10px;
+// }

@@ -1,0 +1,20 @@
+
+.sliderLogo__container.owl-carousel .sliderLogo__item > img{
+    width: auto;
+}
+
+.sliderLogo__item{
+	    min-height: 230px;
+    display: flex;
+    align-items: center;
+}
+
+.sliderLogo {
+    padding: 0 110px;
+}
+.navLogo{
+	fill: #999999;
+	&:hover{
+		fill: #3853d8;
+	}
+}
