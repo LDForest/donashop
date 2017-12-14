@@ -79,7 +79,7 @@
 		height: 10px;
 		margin-right: 5px;
 	}
-	&__actions-item{
+	&__actions-item {
 		margin-right: 5px;
 	}
 	&__viewAll {
@@ -133,14 +133,26 @@
 	display: inline-block;
 }
 
-.owl-prev .populars-prevContainer{
-    transform: rotate(180deg);
+.owl-prev .prev.populars-prevContainer {
+	transform: rotate(180deg);
 }
-// .populars-prev{
-// 	width: 10px;
-// 	height: 10px;
-// }
-// .populars-next{
-// 	width: 10px;
-// 	height: 10px;
-// }
+
+.populars-prevContainer, .populars-nextContainer {
+	height: 70px;
+	border-left: 1px solid #e3e3e3;
+	margin-top: -7px;
+	width: 80px;
+	text-align: center;
+}
+
+.populars-prev {
+	width: 15px;
+	height: 15px;
+	margin-top: 28px;
+}
+
+.populars-next {
+	width: 15px;
+	height: 15px;
+	margin-top: 28px;
+}

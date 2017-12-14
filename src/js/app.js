@@ -5,22 +5,25 @@ const render = require('../../views/templates/products.pug');
 const productsWrapper = $('.products');
 
 const popularNavs = [
-` <svg class="prev populars-prev">
+`	<div class="populars-prevContainer"> 
+		<svg class="prev populars-prev">
    		<use xlink:href="#keyboard-arrow-button">
    	</svg>
 </div>`,
-`	<svg class="next populars-next">
+`	<div class="populars-nextContainer">
+		<svg class="next populars-next">
     		<use xlink:href="#keyboard-arrow-button">
     </svg>
 </div>`]
 
-$('.main-slider').owlCarousel({
+$('.main-slider__container').owlCarousel({
 	 items: 1,
    animateOut: 'fadeOut',
    nav: true,
    loop: true,
    navText: ['<svg class="prev"><use xlink:href="#right-arrow"></svg>', '<svg class="next"><use xlink:href="#right-arrow"></svg>']
 })
+
 
 $('.event').owlCarousel({
 	 items: 1 ,
@@ -32,7 +35,7 @@ $('.event').owlCarousel({
 
 $('.popular-carousel').owlCarousel({
 	 items: 1 ,
-   animateOut: 'fadeOut',
+   // animateOut: 'fadeOut',
    nav: true,
    loop: true,
    dots: false,
