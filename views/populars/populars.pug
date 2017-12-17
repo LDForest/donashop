@@ -21,10 +21,10 @@ mixin article(image, date, title, commentsCount, likesCount, isBig)
 	.popular__container.popular-carousel.owl-carousel
 		each item in populars
 			.popular__item
-				+article('/images/news/article1.png', item[0].date, item[0].header, item[0].comments, item[0].likes, true)
+				+article('./public/images/news/article1.png', item[0].date, item[0].header, item[0].comments, item[0].likes, true)
 				.popular__right-block
-					+article('/images/news/article2.png', item[1].date, item[1].header, item[1].comments, item[1].likes, false)
-					+article('/images/news/article3.png', item[2].date, item[2].header, item[2].comments, item[2].likes, false)
+					+article('./public/images/news/article2.png', item[1].date, item[1].header, item[1].comments, item[1].likes, false)
+					+article('./public/images/news/article3.png', item[2].date, item[2].header, item[2].comments, item[2].likes, false)
 					.article__viewAll.article
 						a.article__link(href="#") view all
 						.article__arrow 

@@ -1,5 +1,7 @@
 import $ from 'jquery';
 import 'owl-carousel';
+import './mockJqueryAjax';
+
 const render = require('../../views/templates/products.pug');
 
 const productsWrapper = $('.products');
@@ -62,7 +64,7 @@ $('#load').on('click', function(e) {
 
 	$.ajax('/index-products').then(data => {
 		const rendered = render({
-			data : transformData(data, 4)
+			data: transformData(data, 4)
 		});
 		productsWrapper.append(rendered);
 		svg.toggleClass('loader_animate');

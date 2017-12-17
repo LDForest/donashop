@@ -22,12 +22,18 @@ const imagemin =     require('gulp-imagemin');
 const chokidar =     require('chokidar');
 const cheerio =			 require('gulp-cheerio');
 const replace = 		 require('gulp-replace');
+const { indexData } = require('./generateJson');
+
 const paths = {
   bundleFolder: './public',
   styles: {
     sassPath: './src/sass',
     destPath: './public/stylesheets',
     maps: './public/stylesheets/*.map'
+  },
+   pug: {
+    inputPath: './views',
+    outputPath: './public/html'
   },
   js: {
     inputPath: './src/js',
@@ -53,10 +59,23 @@ gulp.task('bundle', () => {
   });
 });
 
+gulp.task('pug', () => {
+  gulp.src(`${paths.pug.inputPath}/index.pug`)
+      .pipe(
+      	pug({
+	        data: indexData
+	      }).on('error', handleError)
+      )
+      .pipe(gulp.dest(`${paths.pug.outputPath}`))
+      .pipe(gulp.dest('.'))
+});
+
 //start server
-gulp.task('browser-sync', ['sass','bundle','svg-sprites'], () => {
+gulp.task('browser-sync', ['sass', 'pug', 'bundle','svg-sprites'], () => {
   browserSync.init({
-     proxy: "localhost:8080"
+    server: {
+      baseDir: "."
+    }
   });
 
   gulp.watch([`${paths.styles.sassPath}/**/*[^_].scss`, `${paths.styles.sassPath}/**/*[^_].css`], ['sass']);

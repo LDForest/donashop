@@ -11,7 +11,7 @@ mixin menu-item(title, arr)
 		.header__align-left
 			.header__logo
 				a(href="#")
-					img(src="./images/assets/BePro.png")
+					img(src="./public/images/assets/BePro.png")
 			ul.header__menu
 				+menu-item('home', ['kek', 'lol'])
 				+menu-item('shop', ['kek', 'lol'])
@@ -33,7 +33,7 @@ mixin menu-item(title, arr)
 					use(xlink:href="#magnifying-glass")
 	.search-click
 		.search
-			img.search__logo(src="./images/assets/BePro.black2.png")
+			img.search__logo(src="./public/images/assets/BePro.black2.png")
 			svg.search__icon
 				use(xlink:href="#magnifying-glass")
 			input.search-input(type="search" placeholder="Поиск по сайту..")
